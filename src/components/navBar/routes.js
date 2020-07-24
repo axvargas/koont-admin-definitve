@@ -1,5 +1,6 @@
 export const routes = [
-    {text: "Users", link: "/users"},
-    {text: "Posts", link: "/posts"},
-    {text: "Admins", link: "/admins"}
+    {text: "Principal", link: "/Principal"},
+    {text: "Usuarios", link: "/users"},
+    {text: "Anuncios", link: "/posts"},
+    {text: "Administradores", link: "/admins"}
 ]

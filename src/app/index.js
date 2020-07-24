@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from '../routes/Router';
 import { SnackbarProvider } from 'notistack';
-
+import { ThemeProvider } from '@material-ui/styles';
 //Providers
 // import ProjectState from '../context/projects/state';
 // import TasksState from '../context/tasks/state';
@@ -16,6 +16,7 @@ import CloseIcon from '@material-ui/icons/Close';
 //tokenAuth import
 // import tokenAuth from '../config/tokenAuth';
 import { makeStyles } from '@material-ui/core/styles';
+import theme from '../theme';
 
 const useStyles = makeStyles(theme => ({
   success: { backgroundColor: '#3f51b5' },
@@ -23,6 +24,7 @@ const useStyles = makeStyles(theme => ({
   warning: { backgroundColor: 'yellow' },
   info: { backgroundColor: 'blue' },
 }));
+
 
 // Check if we have a token
 // const token = localStorage.getItem('token');
@@ -40,33 +42,35 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <SnackbarProvider
-        ref={notistackRef}
-        maxSnack={5}
-        action={(key) => (
+      <ThemeProvider theme={theme}>
+        <SnackbarProvider
+          ref={notistackRef}
+          maxSnack={5}
+          action={(key) => (
 
-          <IconButton onClick={onCloseSnack(key)} size="small">
-            <CloseIcon size="small" />
-          </IconButton>
+            <IconButton onClick={onCloseSnack(key)} size="small">
+              <CloseIcon size="small" />
+            </IconButton>
 
-        )}
-        classes={{
-          variantSuccess: classes.success,
-          variantError: classes.error,
-          variantWarning: classes.warning,
-          variantInfo: classes.info,
-        }}
-      >
-        {/* <ProjectState> */}
+          )}
+          classes={{
+            variantSuccess: classes.success,
+            variantError: classes.error,
+            variantWarning: classes.warning,
+            variantInfo: classes.info,
+          }}
+        >
+          {/* <ProjectState> */}
 
           {/* <TasksState> */}
-            {/* <AuthState> */}
-              <Router />
-            {/* </AuthState> */}
+          {/* <AuthState> */}
+          <Router />
+          {/* </AuthState> */}
           {/* </TasksState> */}
 
-        {/* </ProjectState> */}
-      </SnackbarProvider>
+          {/* </ProjectState> */}
+        </SnackbarProvider>
+      </ThemeProvider>
     </BrowserRouter >
 
   );

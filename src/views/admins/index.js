@@ -26,7 +26,7 @@ const Admins = () => {
     return (
 
         <ResponsiveDrawer>
-            <h1>Admins</h1>
+            <h1>Administradores</h1>
             <DataTable />
         </ResponsiveDrawer>
 

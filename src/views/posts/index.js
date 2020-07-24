@@ -27,7 +27,7 @@ const Posts = () => {
     return (
 
         <ResponsiveDrawer>
-            <h1>Posts</h1>
+            <h1>Anuncios</h1>
 
             <DataTable />
         </ResponsiveDrawer>

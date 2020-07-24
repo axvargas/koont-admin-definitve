@@ -26,7 +26,7 @@ const Users = () => {
     return (
 
         <ResponsiveDrawer>
-            <h1>Users</h1>
+            <h1>Usuarios</h1>
             <DataTable />
         </ResponsiveDrawer>
 
