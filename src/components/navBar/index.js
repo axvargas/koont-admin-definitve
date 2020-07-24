@@ -7,7 +7,8 @@ import {
     List,
     ListSubheader,
     Divider,
-    MenuItem
+    MenuItem,
+    Grid
 } from '@material-ui/core';
 
 import ListItemLink from './ListItemLink';
@@ -37,6 +38,20 @@ const NavBarList = ({ handleDrawerToggle }) => {
                 }
             </List >
             <Divider />
+            <br />
+            <Grid container justify="center">
+                <Grid item>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        component={RouterLink}
+                        to={'/new-admin'}
+                    >
+                        Nuevo Admin
+                    </Button>
+                </Grid>
+            </Grid>
+            <br />
             {/* <List
                 component="nav"
                 aria-label="main mailbox folders"

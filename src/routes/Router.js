@@ -8,6 +8,7 @@ import Users from '../views/users';
 import Posts from '../views/posts';
 import Admins from '../views/admins';
 import Principal from '../views/principal';
+import NewAdmin from '../views/newAdmin';
 //PrivateRoutes
 // import PrivateRoute from '../components/private';
 // import PrivateSignIn from '../components/private/privateSignIn';
@@ -23,7 +24,7 @@ const Router = () => {
             <Route exact path='/users' component={Users}></Route>
             <Route exact path='/posts' component={Posts}></Route>
             <Route exact path='/admins' component={Admins}></Route>
-
+            <Route exact path='/new-admin' component={NewAdmin}></Route>
             <Redirect from="/" to="/sign-in" />
             {/*<Route component={NotFound}></Route> */}
         </Switch>

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 //@Material-UI imports
 import {
@@ -85,10 +85,10 @@ const SignIn = ({ history }) => {
     //     // eslint-disable-next-line 
     // }, [submit, error, authentication, field]);
 
-    const error={
+    const error = {
 
     }
-    const msg={
+    const msg = {
 
     }
     // Functions
@@ -143,10 +143,10 @@ const SignIn = ({ history }) => {
         //     email: form.email,
         //     password: form.password
         // });
-        
+
         console.log("Submiting..")
 
-
+        history.push('/principal')
     }
 
     return (
@@ -215,16 +215,16 @@ const SignIn = ({ history }) => {
                     </Button>
                     <Grid container>
                         <Grid item xs>
-                            {/* <Link href="#" variant="body2"> */}
+                            {/* <RouterLink href="#" variant="body2"> */}
                                 Forgot password?
-                            {/* </Link> */}
+                            {/* </RouterLink> */}
                         </Grid>
                         <Grid item>
-                            <Link to='/sign-up' variant="body2" 
+                            <RouterLink to='/sign-up' variant="body2"
                             // onClick={byeError}
                             >
                                 {"Don't have an account? Sign Up"}
-                            </Link>
+                            </RouterLink>
                         </Grid>
                     </Grid>
                 </form>

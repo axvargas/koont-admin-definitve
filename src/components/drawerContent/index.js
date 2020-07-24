@@ -29,7 +29,7 @@ const DrawerContent = ({ handleDrawerToggle }) => {
 
                 />
 
-                <Divider />
+                
             </Hidden>
 
 
