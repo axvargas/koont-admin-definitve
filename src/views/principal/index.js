@@ -31,6 +31,7 @@ const Principal = () => {
                     className={classes.cont}
                     container
                     spacing={4}
+                    alignItems="center"
                 >
                     <Grid
                         item
