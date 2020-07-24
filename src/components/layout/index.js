@@ -22,6 +22,7 @@ import DrawerContent from '../drawerContent';
 // Styles imports
 import useStyles from './style';
 import { useTheme } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 
 // Context imports
 // import AuthContext from '../../../context/auth/context';
@@ -31,7 +32,7 @@ const ResponsiveDrawer = ({ children }) => {
 	// const authContext = useContext(AuthContext);
 	// const { user, getAuthUser, signOutUser } = authContext;		//Va en un effect
 
-
+	let history = useHistory();
 	const classes = useStyles();
 	const theme = useTheme();
 
@@ -59,6 +60,7 @@ const ResponsiveDrawer = ({ children }) => {
 	const handleSignOut = () => {
 		handleClose();
 		signOutUser();
+		history.push('/sign-in');
 	}
 	const signOutUser = () => {
 		console.log("signing out");

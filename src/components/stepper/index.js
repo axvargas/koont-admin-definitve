@@ -13,17 +13,17 @@ import SignInInfo from './components/singInInfo';
 import useStyles from './style';
 
 function getSteps() {
-    return ['Ingresa información personal del Administrador', 'Ingresa la foto del Administrador', 'Ingresa la información de ingreso a la plataforma'];
+    return ['Ingresa la información de ingreso a la plataforma', 'Ingresa información personal del Administrador', 'Ingresa la foto del Administrador'];
 }
 
 function getStepContent(stepIndex) {
     switch (stepIndex) {
         case 0:
-            return <PersonalInfo />;
-        case 1:
-            return <Photo />;
-        case 2:
             return <SignInInfo />;
+        case 1:
+            return <PersonalInfo />;
+        case 2:
+            return <Photo />;
         default:
             return 'Unknown stepIndex';
     }
