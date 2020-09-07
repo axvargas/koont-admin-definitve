@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { makeStyles } from '@material-ui/styles';
 import {
   Card,
@@ -28,7 +28,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const PostsByDate = props => {
+const PostsByLikes = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -47,12 +47,12 @@ const PostsByDate = props => {
             Últimos 6 meses<ArrowDropDownIcon />
           </Button>
         }
-        title="Últimos anuncios"
+        title="Número de likes mensuales"
       />
       <Divider />
       <CardContent>
         <div className={classes.chartContainer}>
-          <Bar
+          <Line
             data={data}
             options={options}
           />
@@ -72,8 +72,8 @@ const PostsByDate = props => {
   );
 };
 
-PostsByDate.propTypes = {
+PostsByLikes.propTypes = {
   className: PropTypes.string
 };
 
-export default PostsByDate;
+export default PostsByLikes;

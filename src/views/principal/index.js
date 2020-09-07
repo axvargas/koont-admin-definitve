@@ -5,6 +5,7 @@ import {
 } from '@material-ui/core';
 import ResponsiveDrawer from '../../components/layout';
 import PostsByDate from '../../components/postsByDate';
+import PostsByLikes from '../../components/postByLikes';
 import ActiveInactiveAdmins from '../../components/activeInactiveAdmins';
 // import FormTask from './components/formTask';
 // import ListOfTasks from './components/listOfTasks';
@@ -50,8 +51,10 @@ const Principal = () => {
                         xs={12}
                     >
                         <ActiveInactiveAdmins />
-                    </Grid>
+                    </Grid>                  
+                    
                 </Grid>
+                <PostsByLikes/>
             </div>
         </ResponsiveDrawer>
 
