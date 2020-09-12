@@ -5,12 +5,12 @@ export const data = {
   datasets: [
     {
       label: 'Fecha inicio',
-      backgroundColor: palette.primary.main,
+      backgroundColor: palette.primary.dark,
       data: [18, 5, 19, 27, 29, 19, 20,11]
     },
     {
       label: 'Fecha termino',
-      backgroundColor: palette.neutral,
+      backgroundColor: palette.secondary.light,
       data: [11, 20, 12, 29, 30, 25, 13,10]
     }
   ]
@@ -19,7 +19,9 @@ export const data = {
 export const options = {
   responsive: true,
   maintainAspectRatio: false,
-  animation: false,
+  animation: {
+    animateRotate: true,
+  },
   legend: { display: false },
   cornerRadius: 20,
   tooltips: {

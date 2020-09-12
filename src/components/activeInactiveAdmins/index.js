@@ -3,6 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/styles';
+// import { makeStyles } from '@material-ui/styles';
 import {
   Card,
   CardHeader,
@@ -14,6 +15,7 @@ import {
 import PersonIcon from '@material-ui/icons/Person';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import RefreshIcon from '@material-ui/icons/Refresh';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles(theme => ({
@@ -38,6 +40,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const colores = createMuiTheme({
+  palette: {
+    color1: '#3f51b5',
+    color2: '#8bc34a',
+    color3: '#e91e63',
+    color4: '#009688',
+    color5: '#ff9800',
+  },
+});
+
 const ActiveInactiveAdmins = props => {
   const { className, ...rest } = props;
 
@@ -47,17 +59,20 @@ const ActiveInactiveAdmins = props => {
   const data = {
     datasets: [
       {
-        data: [80, 20],
+        data: [80, 20,10,20,40],
         backgroundColor: [
-          theme.palette.primary.main,
-          theme.palette.error.main,
+          colores.palette.color1,
+          colores.palette.color2,
+          colores.palette.color3,
+          colores.palette.color4,
+          colores.palette.color5,
         ],
-        borderWidth: 8,
+        borderWidth: 4,
         borderColor: theme.palette.white,
-        hoverBorderColor: theme.palette.white
+        hoverBorderColor: theme.palette.white,
       }
     ],
-    labels: ['Activos', 'Inactivos']
+    labels: ['Activos', 'Inactivos','Tag3','Tag4', 'Tag5']
   };
 
   const options = {
@@ -66,7 +81,13 @@ const ActiveInactiveAdmins = props => {
     },
     responsive: true,
     maintainAspectRatio: false,
-    animation: false,
+    animation: {
+      animateRotate: true,
+    },
+    legend: { 
+      display: true,
+      position: 'bottom',
+    },
     cutoutPercentage: 80,
     layout: { padding: 0 },
     tooltips: {
@@ -82,21 +103,21 @@ const ActiveInactiveAdmins = props => {
     }
   };
 
-  const devices = [
+  // const devices = [
 
-    {
-      title: 'Activos',
-      value: '80',
-      icon: <PersonIcon />,
-      color: theme.palette.primary.main
-    },
-    {
-      title: 'Inactivos',
-      value: '20',
-      icon: <PermIdentityIcon />,
-      color: theme.palette.error.main
-    }
-  ];
+  //   {
+  //     title: 'Activos',
+  //     value: '80',
+  //     icon: <PersonIcon />,
+  //     color: theme.palette.primary.main
+  //   },
+  //   {
+  //     title: 'Inactivos',
+  //     value: '20',
+  //     icon: <PermIdentityIcon />,
+  //     color: theme.palette.error.main
+  //   },
+  // ];
 
   return (
     <Card
@@ -109,7 +130,7 @@ const ActiveInactiveAdmins = props => {
             <RefreshIcon />
           </IconButton>
         }
-        title="Administradores "
+        title="5 Tags más populares"
       />
       <Divider />
       <CardContent>
@@ -119,7 +140,7 @@ const ActiveInactiveAdmins = props => {
             options={options}
           />
         </div>
-        <div className={classes.stats}>
+        {/* <div className={classes.stats}>
           {devices.map(device => (
             <div
               className={classes.device}
@@ -135,7 +156,7 @@ const ActiveInactiveAdmins = props => {
               </Typography>
             </div>
           ))}
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   );
