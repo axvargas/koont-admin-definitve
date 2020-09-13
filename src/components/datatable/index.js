@@ -14,7 +14,7 @@ const DataTable = ({ filtered, columns }) => {
                 title={"Dummy Data"}
                 data={filtered}
                 columns={columns}
-                options={options}
+            // options={options}
             />
         </>
     );

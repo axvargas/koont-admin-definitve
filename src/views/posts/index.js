@@ -25,7 +25,7 @@ const Posts = () => {
     // const projectContext = useContext(ProjectContext);
     // const { actualProject } = projectContext;
     const [categories, setCategories] = useState([]);
-    const [filter, setFilter] = useState('');
+    const [filter, setFilter] = useState(null);
     const [filteredPosts, setfilteredPosts] = useState([]);
     useEffect(() => {
         const getCategories = async () => {
@@ -38,21 +38,43 @@ const Posts = () => {
     }, [])
 
     useEffect(() => {
-        const getFilteredPosts = async () => {
-            const URL = 'mongo'
+        const getFilteredPosts = async (filter) => {
+            console.log(filter.nombre);
+            const URL = `http://localhost:5000/anuncios/categoria/${filter.nombre}`
             const response = await axios.get(URL)
-            setfilteredPosts(response)
+            setfilteredPosts(response.data)
+            console.log(response.data);
         }
-
         if (filter) {
-            getFilteredPosts();
+            getFilteredPosts(filter);
         } else {
             setfilteredPosts([])
         }
         // eslint-disable-next-line
     }, [filter])
 
-    const columns = ["Name", "Company", "City", "State"];
+    const columns = [
+        {
+            name: "categoria",
+            label: "Categoria"
+        },
+        {
+            name: "company_name",
+            label: "Autor"
+        },
+        {
+            name: "skills",
+            Habilidades: "Inicio"
+        },
+        {
+            name: "fecha_inicio",
+            label: "Inicio"
+        },
+        {
+            name: "fecha_termino",
+            label: "Fin"
+        }
+    ];
 
     return (
 
