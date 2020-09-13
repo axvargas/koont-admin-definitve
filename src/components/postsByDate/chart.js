@@ -4,14 +4,9 @@ export const data = {
   labels: ['Marzo/2020' ,'Abril/2020', 'Mayo/2020','Junio/2020', 'Julio/2020','Septiembre/2020'],
   datasets: [
     {
-      label: 'Fecha inicio',
+      label: 'Cantidad de anuncios',
       backgroundColor: palette.primary.dark,
       data: [18, 5, 19, 27, 29, 19, 20,11]
-    },
-    {
-      label: 'Fecha termino',
-      backgroundColor: palette.secondary.light,
-      data: [11, 20, 12, 29, 30, 25, 13,10]
     }
   ]
 };
@@ -28,7 +23,7 @@ export const options = {
     enabled: true,
     mode: 'index',
     intersect: false,
-    borderWidth: 1,
+    borderWidth: 5,
     borderColor: palette.divider,
     backgroundColor: palette.white,
     titleFontColor: palette.text.primary,

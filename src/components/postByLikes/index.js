@@ -47,7 +47,7 @@ const PostsByLikes = props => {
             Últimos 6 meses<ArrowDropDownIcon />
           </Button>
         }
-        title="Número de likes mensuales"
+        title="Número de vacantes mensuales"
       />
       <Divider />
       <CardContent>

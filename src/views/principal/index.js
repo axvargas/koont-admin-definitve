@@ -23,6 +23,30 @@ const Principal = () => {
     // const projectContext = useContext(ProjectContext);
     // const { actualProject } = projectContext;
 
+    const tags = [
+        {
+            "nombre":"Virtual Box",
+            "cantidad": 32,
+        },
+        {
+            "nombre":"AutoCad",
+            "cantidad": 14,
+        },
+        {
+            "nombre":"Bilingue",
+            "cantidad": 78,
+        },
+        {
+            "nombre":"Fisica",
+            "cantidad": 56,
+        },
+        {
+            "nombre":"Quimica Organica",
+            "cantidad": 44,
+        }         
+          
+    ]
+
     return (
 
         <ResponsiveDrawer>
@@ -50,7 +74,7 @@ const Principal = () => {
                         md={6}
                         xs={12}
                     >
-                        <ActiveInactiveAdmins />
+                        <ActiveInactiveAdmins datos={tags} />
                     </Grid>                  
                     
                 </Grid>

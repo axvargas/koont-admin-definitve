@@ -41,11 +41,11 @@ const useStyles = makeStyles(theme => ({
 
 const colores = createMuiTheme({
   palette: {
-    color1: '#3f51b5',
-    color2: '#8bc34a',
-    color3: '#e91e63',
-    color4: '#009688',
-    color5: '#ff9800',
+    color3: '#4474e1',
+    color2: '#3f51b5',
+    color1: '#2196f3',
+    color4: '#03a9f4',
+    color5: '#00acc1',
   },
 });
 
@@ -54,11 +54,12 @@ const ActiveInactiveAdmins = props => {
 
   const classes = useStyles();
   const theme = useTheme();
-
+  console.log(props.datos[0]);
   const data = {
     datasets: [
       {
-        data: [80, 20,10,20,40],
+        data: [props.datos[0].cantidad, props.datos[1].cantidad,
+        props.datos[2].cantidad,props.datos[3].cantidad,props.datos[4].cantidad],
         backgroundColor: [
           colores.palette.color1,
           colores.palette.color2,
@@ -71,7 +72,8 @@ const ActiveInactiveAdmins = props => {
         hoverBorderColor: theme.palette.white,
       }
     ],
-    labels: ['Activos', 'Inactivos','Tag3','Tag4', 'Tag5']
+    labels: [props.datos[0].nombre, props.datos[1].nombre,props.datos[2].nombre,
+    props.datos[3].nombre, props.datos[4].nombre]
   };
 
   const options = {
