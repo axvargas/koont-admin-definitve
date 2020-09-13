@@ -1,12 +1,12 @@
-import React, { useContext, Fragment } from 'react';
+// import React, { useContext, Fragment } from 'react';
+import React from 'react';
 
-import {
-    Divider, Grid, Typography, Grow
+import {Grid
 } from '@material-ui/core';
 import ResponsiveDrawer from '../../components/layout';
 import PostsByDate from '../../components/postsByDate';
 import PostsByLikes from '../../components/postByLikes';
-import ActiveInactiveAdmins from '../../components/activeInactiveAdmins';
+import ActiveInactiveAdmins from '../../components/popularTags';
 // import FormTask from './components/formTask';
 // import ListOfTasks from './components/listOfTasks';
 // import DeleteProject from './components/deleteProject';

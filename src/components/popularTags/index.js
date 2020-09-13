@@ -9,11 +9,10 @@ import {
   CardHeader,
   CardContent,
   IconButton,
-  Divider,
-  Typography
+  Divider
 } from '@material-ui/core';
-import PersonIcon from '@material-ui/icons/Person';
-import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+// import PersonIcon from '@material-ui/icons/Person';
+// import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import { createMuiTheme } from '@material-ui/core/styles';
 
@@ -24,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
   chartContainer: {
     position: 'relative',
-    height: '300px'
+    height: '460px'
   },
   stats: {
     marginTop: theme.spacing(2),

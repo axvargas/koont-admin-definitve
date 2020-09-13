@@ -47,7 +47,7 @@ const PostsByDate = props => {
             Últimos 6 meses<ArrowDropDownIcon />
           </Button>
         }
-        title="Últimos anuncios"
+        title="Número de anuncios"
       />
       <Divider />
       <CardContent>
