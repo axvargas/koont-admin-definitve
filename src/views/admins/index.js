@@ -17,17 +17,25 @@ import DataTable from '../../components/datatable';
 // import ProjectContext from '../../context/projects/context';
 
 import useStyles from './style';
+
+
 const Admins = () => {
     const classes = useStyles();
     //Context State
     // const projectContext = useContext(ProjectContext);
     // const { actualProject } = projectContext;
-
+    const columns = ["Name", "Company", "City", "State"];
+    const filteredAdmins = [
+        ["Joe James", "Test Corp", "Yonkers", "NY"],
+        ["John Walsh", "Test Corp", "Hartford", "CT"],
+        ["Bob Herm", "Test Corp", "Tampa", "FL"],
+        ["James Houston", "Test Corp", "Dallas", "TX"],
+    ];
     return (
 
         <ResponsiveDrawer>
             <h1>Administradores</h1>
-            <DataTable />
+            <DataTable filtered={filteredAdmins} columns={columns} />
         </ResponsiveDrawer>
 
     );

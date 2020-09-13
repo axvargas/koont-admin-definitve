@@ -157,7 +157,7 @@ const SignIn = ({ history }) => {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign in
+                    Inicio de sesión - Administrador
                 </Typography>
                 <form className={classes.form} onSubmit={handleSubmit} noValidate>
                     <TextField
@@ -166,7 +166,7 @@ const SignIn = ({ history }) => {
                         required
                         fullWidth
                         id="email"
-                        label="Email Address"
+                        label="Email"
                         name="email"
                         autoComplete="email"
                         autoFocus
@@ -177,7 +177,7 @@ const SignIn = ({ history }) => {
                     />
 
                     <FormControl className={classes.txt} required fullWidth variant="outlined" error={errors.password}>
-                        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                        <InputLabel htmlFor="outlined-adornment-password">Contraseña</InputLabel>
                         <OutlinedInput
                             id="outlined-adornment-password"
                             type={showPassword ? 'text' : 'password'}
@@ -202,7 +202,7 @@ const SignIn = ({ history }) => {
                     </FormControl>
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
+                        label="Recuérdame"
                     />
                     <Button
                         type="submit"
@@ -211,19 +211,19 @@ const SignIn = ({ history }) => {
                         color="primary"
                         className={classes.submit}
                     >
-                        Sign In
+                        Iniciar sesión
                     </Button>
                     <Grid container>
                         <Grid item xs>
                             {/* <RouterLink href="#" variant="body2"> */}
-                                Forgot password?
+                                Olvidé la contraseña?
                             {/* </RouterLink> */}
                         </Grid>
                         <Grid item>
                             <RouterLink to='/sign-up' variant="body2"
                             // onClick={byeError}
                             >
-                                {"Don't have an account? Sign Up"}
+                                {"Aún no tienes cuenta? Regístrate"}
                             </RouterLink>
                         </Grid>
                     </Grid>
