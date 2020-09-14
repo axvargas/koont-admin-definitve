@@ -1,15 +1,5 @@
 import palette from '../../theme/palette';
 
-export const data = {
-  labels: ['Marzo/2020' ,'Abril/2020', 'Mayo/2020','Junio/2020', 'Julio/2020','Septiembre/2020'],
-  datasets: [
-    {
-      label: 'Número de vacantes',
-      borderColor: palette.primary.main,
-      data: [18, 5, 19, 27, 29, 19, 20,11]
-    }
-  ]
-};
 
 export const options = {
   // responsive: true,

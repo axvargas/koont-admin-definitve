@@ -1,15 +1,5 @@
 import palette from '../../theme/palette';
 
-export const data = {
-  labels: ['Marzo/2020' ,'Abril/2020', 'Mayo/2020','Junio/2020', 'Julio/2020','Septiembre/2020'],
-  datasets: [
-    {
-      label: 'Cantidad de anuncios',
-      backgroundColor: palette.primary.dark,
-      data: [18, 5, 19, 27, 29, 19, 20,11]
-    }
-  ]
-};
 
 export const options = {
   responsive: true,
@@ -34,8 +24,8 @@ export const options = {
   scales: {
     xAxes: [
       {
-        barThickness: 12,
-        maxBarThickness: 10,
+        barThickness: 30,
+        // maxBarThickness: 30,
         barPercentage: 0.5,
         categoryPercentage: 0.5,
         ticks: {

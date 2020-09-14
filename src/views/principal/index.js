@@ -1,16 +1,11 @@
-// import React, { useContext, Fragment } from 'react';
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import {Grid
 } from '@material-ui/core';
 import ResponsiveDrawer from '../../components/layout';
 import PostsByDate from '../../components/postsByDate';
 import PostsByLikes from '../../components/postByLikes';
 import ActiveInactiveAdmins from '../../components/popularTags';
-// import FormTask from './components/formTask';
-// import ListOfTasks from './components/listOfTasks';
-// import DeleteProject from './components/deleteProject';
-// import NameOfProject from './components/nameOfProject';
 
 
 // import choose from '../../images/choose.svg'
@@ -19,33 +14,36 @@ import ActiveInactiveAdmins from '../../components/popularTags';
 import useStyles from './style';
 const Principal = () => {
     const classes = useStyles();
-    //Context State
-    // const projectContext = useContext(ProjectContext);
-    // const { actualProject } = projectContext;
 
-    const tags = [
-        {
-            "nombre":"Virtual Box",
-            "cantidad": 32,
-        },
-        {
-            "nombre":"AutoCad",
-            "cantidad": 14,
-        },
-        {
-            "nombre":"Bilingue",
-            "cantidad": 78,
-        },
-        {
-            "nombre":"Fisica",
-            "cantidad": 56,
-        },
-        {
-            "nombre":"Quimica Organica",
-            "cantidad": 44,
-        }         
-          
-    ]
+    const [tags, setTags] = useState([]);
+    useEffect(() => {
+        const getTags = async () => {
+            const URL = `http://localhost:5000/anuncios/popular_tags/`
+            const response = await axios.get(URL)
+            setTags(response.data)
+        }
+        getTags();
+    }, [])
+
+    const [anuncios, setAnuncios] = useState([]);
+    useEffect(() => {
+        const getAnuncios = async () => {
+            const URL = `http://localhost:5000/anuncios/numero_anuncios/`
+            const response = await axios.get(URL)
+            setAnuncios(response.data)
+        }
+        getAnuncios();
+    }, [])
+
+    const [vacantes, setVacantes] = useState([]);
+    useEffect(() => {
+        const getVacantes = async () => {
+            const URL = `http://localhost:5000/anuncios/numero_vacantes/`
+            const response = await axios.get(URL)
+            setVacantes(response.data)
+        }
+        getVacantes();
+    }, [])
 
     return (
 
@@ -65,7 +63,7 @@ const Principal = () => {
                         md={12}
                         xs={12}
                     >
-                        <PostsByDate />
+                        {anuncios.length>0 && <PostsByDate anuncios={anuncios} />}
                     </Grid>
                     <Grid
                         item
@@ -74,11 +72,11 @@ const Principal = () => {
                         md={6}
                         xs={12}
                     >
-                        <ActiveInactiveAdmins datos={tags} />
+                        {tags.length>0 && <ActiveInactiveAdmins datos={tags} />}
                     </Grid>                  
                     
                 </Grid>
-                <PostsByLikes/>
+                {vacantes.length>0 && <PostsByLikes vacantes={vacantes} />}
             </div>
         </ResponsiveDrawer>
 

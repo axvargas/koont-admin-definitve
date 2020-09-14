@@ -49,37 +49,37 @@ const colores = createMuiTheme({
   },
 });
 
-const ActiveInactiveAdmins = props => {
-  const { className, ...rest } = props;
+const ActiveInactiveAdmins = ({ datos }) => {
+  // const { className, ...rest } = props;
 
   const classes = useStyles();
   const theme = useTheme();
-  console.log(props.datos[0]);
-  const data = {
-    datasets: [
-      {
-        data: [props.datos[0].cantidad, props.datos[1].cantidad,
-        props.datos[2].cantidad,props.datos[3].cantidad,props.datos[4].cantidad],
-        backgroundColor: [
-          colores.palette.color1,
-          colores.palette.color2,
-          colores.palette.color3,
-          colores.palette.color4,
-          colores.palette.color5,
-        ],
-        borderWidth: 4,
-        borderColor: theme.palette.white,
-        hoverBorderColor: theme.palette.white,
-      }
-    ],
-    labels: [props.datos[0].nombre, props.datos[1].nombre,props.datos[2].nombre,
-    props.datos[3].nombre, props.datos[4].nombre]
-  };
+  let data = {
+      datasets: [
+        {
+          data: [datos[0].cantidad,datos[1].cantidad,datos[2].cantidad,datos[3].cantidad,datos[4].cantidad],
+          backgroundColor: [
+            colores.palette.color1,
+            colores.palette.color2,
+            colores.palette.color3,
+            colores.palette.color4,
+            colores.palette.color5,
+          ],
+          borderWidth: 4,
+          borderColor: theme.palette.white,
+          hoverBorderColor: theme.palette.white,
+        }
+      ],
+      labels:[datos[0]._id,datos[1]._id,datos[2]._id,datos[3]._id,datos[4]._id]
+    };
+    // console.log(data)
+  // }
+  // catch{
+  //   console.log("Cargando")
+  // }
+    
 
   const options = {
-    legend: {
-      display: false
-    },
     responsive: true,
     maintainAspectRatio: false,
     animation: {
@@ -104,26 +104,10 @@ const ActiveInactiveAdmins = props => {
     }
   };
 
-  // const devices = [
-
-  //   {
-  //     title: 'Activos',
-  //     value: '80',
-  //     icon: <PersonIcon />,
-  //     color: theme.palette.primary.main
-  //   },
-  //   {
-  //     title: 'Inactivos',
-  //     value: '20',
-  //     icon: <PermIdentityIcon />,
-  //     color: theme.palette.error.main
-  //   },
-  // ];
-
   return (
     <Card
-      {...rest}
-      className={clsx(classes.root, className)}
+      // {...rest}
+      // className={clsx(classes.root, className)}
     >
       <CardHeader
         action={
@@ -131,7 +115,7 @@ const ActiveInactiveAdmins = props => {
             <RefreshIcon />
           </IconButton>
         }
-        title="5 Tags más populares"
+        title="5 Categorias más populares"
       />
       <Divider />
       <CardContent>
@@ -141,23 +125,6 @@ const ActiveInactiveAdmins = props => {
             options={options}
           />
         </div>
-        {/* <div className={classes.stats}>
-          {devices.map(device => (
-            <div
-              className={classes.device}
-              key={device.title}
-            >
-              <span className={classes.deviceIcon}>{device.icon}</span>
-              <Typography variant="body1">{device.title}</Typography>
-              <Typography
-                style={{ color: device.color }}
-                variant="h2"
-              >
-                {device.value}%
-              </Typography>
-            </div>
-          ))}
-        </div> */}
       </CardContent>
     </Card>
   );

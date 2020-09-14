@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Line } from 'react-chartjs-2';
 import { makeStyles } from '@material-ui/styles';
+import palette from '../../theme/palette';
 import {
   Card,
   CardHeader,
@@ -14,7 +15,7 @@ import {
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
-import { data, options } from './chart';
+import { options } from './chart';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -30,6 +31,26 @@ const useStyles = makeStyles(() => ({
 
 const PostsByLikes = props => {
   const { className, ...rest } = props;
+
+  let fecha0 = [props.vacantes[0]._id.month + "/"+props.vacantes[0]._id.year]
+  let fecha1 = [props.vacantes[1]._id.month + "/"+props.vacantes[1]._id.year]
+  let fecha2 = [props.vacantes[2]._id.month + "/"+props.vacantes[2]._id.year]
+  let fecha3 = [props.vacantes[3]._id.month + "/"+props.vacantes[3]._id.year]
+  let fecha4 = [props.vacantes[4]._id.month + "/"+props.vacantes[4]._id.year]
+  let fecha5 = [props.vacantes[5]._id.month + "/"+props.vacantes[5]._id.year]
+  
+  let data = {
+    labels: [fecha0 ,fecha1, fecha2,fecha3, fecha4,fecha5],
+    datasets: [
+      {
+        label: 'Número de vacantes',
+        borderColor: palette.primary.main,
+        data: [props.vacantes[0].suma, props.vacantes[1].suma, props.vacantes[2].suma
+        , props.vacantes[3].suma, props.vacantes[4].suma, props.vacantes[5].suma]
+      }
+    ]
+  };
+
 
   const classes = useStyles();
 
